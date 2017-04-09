@@ -29,7 +29,8 @@ class MessagesController < ApplicationController
       render 'edit'
     end
   end
-def destroy
+
+  def destroy
     @message.destroy
     redirect_to root_path, notice: 'メッセージを削除しました'
   end
@@ -37,7 +38,7 @@ def destroy
   private
   
   def message_params
-    params.require(:message).permit(:name, :body)
+    params.require(:message).permit(:name, :body, :age)
   end
 
   def set_message
